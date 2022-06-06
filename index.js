@@ -9,7 +9,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+app.get("/", (req, res) => {
+    res.send("data")
+})
 app.post("/user/create", (req, res) => {
   fs.readFile("./db.json", "utf-8", (err, data) => {
     const parsed = JSON.parse(data);
